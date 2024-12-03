@@ -1,0 +1,605 @@
+:root {
+    --azul-rey-oscuro: #0051ff;
+    --azul-oscuro: #120052;
+    --gris-claro: #f2f2f2;
+    --blanco: #ffffff;
+    --mostaza: #ffd700;
+    --mostaza-claro: #ffcc33;
+}
+   
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+
+.josefin-sans {
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
+
+
+.nunito {
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
+
+body {
+    color: var(--azul-oscuro);
+    background-color: var(--gris-claro);
+}
+
+header {
+    background: url(mar.jpg) center/cover;
+    color: var(--blanco);
+    padding: 2em;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); 
+    backdrop-filter: blur(8px);
+    z-index: 1;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin: 0.5em 0;
+    position: relative;
+    z-index: 2;
+}
+
+header nav {
+    margin-top: 1.5em; 
+    position: relative;
+    z-index: 2;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1.5em;
+}
+
+header nav a {
+    color: var(--blanco);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+header nav a:hover {
+    color: var(--mostaza);
+}
+
+.titulo-animado {
+    font-size: 2.5em;
+    color: transparent;
+    text-align: center;
+    background: linear-gradient(90deg, var(--gris-claro), var(--azul-rey-oscuro));
+    background-clip: text;
+    -webkit-background-clip: text; 
+    border-right: 0.15em solid var(--azul-oscuro);
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 3s steps(60, end), blink-caret 0.5s step-end infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: var(--azul-rey-oscuro);
+    }
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    background: linear-gradient(135deg, var(--azul-rey-oscuro), var(--azul-oscuro));
+    color: var(--blanco);
+    text-align: center;
+}
+
+.button {
+    background-color: var(--mostaza);
+    color: var(--azul-oscuro);
+    padding: 0.8em 1.2em;
+    margin-top: 1em;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: opacity 0.5s;
+}
+
+.button:hover {
+    background-color: var(--mostaza-claro);
+    opacity: 0.9;
+}
+
+section h2 {
+    text-align: center;
+    margin: 1em 0;
+    color: var(--azul-rey-oscuro);
+}
+
+.grid {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    padding: 1em;
+}
+
+.project-card {
+    width: 520px;
+    height: 460px;
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 1em;
+    transition: transform 0.3s;
+    background-color: var(--blanco);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.project-card h3{
+
+color: var(--azul-rey-oscuro);
+
+}
+
+
+.project-card:hover {
+    transform: scale(1.05);
+    border-color: var(--mostaza);
+}
+
+.project-card img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+}
+
+form input, form textarea, form button {
+    width: 100%;
+    max-width: 400px;
+    padding: 0.5em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+form input:focus, form textarea:focus {
+    border-color: var(--azul-rey-oscuro);
+}
+
+form button {
+    background-color: var(--azul-rey-oscuro);
+    color: var(--blanco);
+    border: none;
+    cursor: pointer;
+    padding: 0.5em 1em;
+}
+
+form button:hover {
+    background-color: var(--azul-oscuro);
+}
+
+#sobre-mi {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2em;
+}
+
+#inicio {
+    background-image: url(mar.jpg); 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--blanco);
+    text-align: center;
+}
+
+#inicio .hero-content {
+    background-color: rgba(0, 0, 0, 0.5); 
+    padding: 1em;
+    border-radius: 5px;
+}
+
+#inicio .hero-content h2{
+
+    color: var(--gris-claro);
+
+}
+
+/*tarjetas*/
+
+
+
+
+.destacadas {
+    background-color: #003366; 
+    padding: 30px;
+    border-radius: 8px;
+    display: flex;
+    gap: 115px;
+    justify-content: center;
+
+}
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    
+    header {
+        padding: 1em;
+    }
+
+    header h1 {
+        font-size: 1.8em; 
+    }
+
+    header nav ul {
+        flex-direction: column; 
+        gap: 0.5em; 
+    }
+
+    
+    .hero {
+        height: auto; 
+        padding: 2em 1em;
+    }
+
+    
+    .button {
+        padding: 0.5em 0.8em; 
+        font-size: 0.9em;
+    }
+
+    
+    .grid {
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    .project-card {
+        width: 100%; 
+        max-width: 350px; 
+    }
+
+  
+    form input, form textarea, form button {
+        width: 90%; 
+        max-width: 100%; 
+    }
+
+    
+    section {
+        padding: 1em; 
+    }
+
+    section h2 {
+        font-size: 1.5em;
+    }
+}
+/* Sección de las habilidades */
+.skills-container {
+    display: flex; 
+    justify-content: space-between; 
+    flex-wrap: wrap; }
+
+.column {
+    width: 48%; 
+    margin: 0 1em; 
+}
+
+
+.skill {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.skill-icon {
+    width: 44px; 
+    height: 44px;
+    margin-right: 0.5em;
+    object-fit: contain;
+}
+
+.skill span {
+    flex-shrink: 0;
+    width: 100px; 
+    font-weight: bold;
+    color: #333;
+}
+
+.skill-bar {
+    flex: 1;
+    height: 24px;
+    background-color: #cecece;
+    margin-left: 1em;
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+.skill-bar::before {
+    content: "";
+    display: block;
+    height: 100%;
+    width: 0;
+    background-color: var(--azul-oscuro); 
+    border-radius: 55px;
+    transition: width 1.8s ease;
+}
+
+.skill-bar[data-skill-level="80"]::before { width: 80%; }
+.skill-bar[data-skill-level="50"]::before { width: 50%; }
+.skill-bar[data-skill-level="70"]::before { width: 70%; }
+.skill-bar[data-skill-level="60"]::before { width: 60%; }
+
+.percentage {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-weight: bold;
+    z-index: 1;
+    white-space: nowrap;
+}
+
+
+/*otros proyectos*/
+
+/* Contenedor de los proyectos */
+.op.grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr; 
+    gap: 20px;
+    align-items: start;
+}
+
+/* Tarjeta de Modelado 3D (grande) */
+.project-cards.grande {
+    grid-column: 1 / 2; 
+    grid-row: span 2; 
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    overflow: hidden;
+    position: relative;
+    height: 700px; 
+}
+
+/* Tarjetas pequeñas */
+.project-cards.peq {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    overflow: hidden;
+    height: 340px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.project-cards.peq img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+
+
+.op.grid .peq:nth-child(1),
+.op.grid .peq:nth-child(2) {
+    grid-column: 2; 
+}
+
+.op.grid .peq:nth-child(3),
+.op.grid .peq:nth-child(4) {
+    grid-column: 3; 
+}
+.project-cards.peq:nth-child(4) {
+    grid-column: 3;
+    grid-row: 2; 
+}
+
+
+
+/* Carrusel de Modelado 3D */
+
+
+
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 550px; 
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%; 
+}
+
+.carousel-images img {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+}
+
+.carousel-controls {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+}
+
+.carousel-controls label {
+    margin: 0 5px;
+    cursor: pointer;
+    padding: 5px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.6);
+    transition: background-color 0.3s;
+}
+
+.carousel-controls label:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+
+#img1:checked ~ .carousel-images {
+    transform: translateX(0);
+}
+
+#img2:checked ~ .carousel-images {
+    transform: translateX(-100%);
+}
+
+#img3:checked ~ .carousel-images {
+    transform: translateX(-200%);
+}
+
+#img4:checked ~ .carousel-images {
+    transform: translateX(-300%);
+}
+
+#img5:checked ~ .carousel-images {
+    transform: translateX(-400%);
+}
+
+#img6:checked ~ .carousel-images {
+    transform: translateX(-500%);
+}
+
+#img7:checked ~ .carousel-images {
+    transform: translateX(-600%);
+}
+
+/*info*/
+
+
+#sobre-mi {
+    display: grid; 
+    grid-template-columns: 1fr 2fr; 
+    gap: 20px; 
+    align-items: center; 
+    padding: 20px;
+}
+
+.imageninfo {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+.Circulito {
+    margin-top: 50px;
+    border-radius: 50%; 
+    object-fit: cover; 
+    width: 250px; 
+    height: 250px; 
+}
+
+.info {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    line-height: 1.6; 
+}
+
+.info p{
+    text-align: left;
+}
+
+/*footer*/
+footer {
+    background-color: var(--azul-rey-oscuro); 
+    color: #fff; 
+    padding: 20px;
+    text-align: center; }
+
+footer { 
+    max-width: 2000px;
+    margin: 0 auto;
+}
+
+footer p {
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+footer .social-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+footer .social-links a:hover {
+    color: var(--mostaza); 
+}
+
